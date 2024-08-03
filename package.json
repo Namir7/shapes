@@ -1,8 +1,8 @@
 {
   "name": "geometry-shapes",
+  "version": "1.0.1",
   "author": "Namir7",
   "description": "simple lib for working with objects in a two-dimensional coordinate system",
-  "version": "1.0.0",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc",
