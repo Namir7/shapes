@@ -6,10 +6,11 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "outDir": "build",
+    "outDir": "lib",
     "declaration": true,
-    "declarationDir": "build/types"
+    "sourceMap": true
+    // "declarationDir": "lib/types"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "lib"]
 }
