@@ -1,16 +1,28 @@
 {
-  "name": "shapes",
+  "name": "geometry-shapes",
+  "author": "Namir7",
+  "description": "simple lib for working with objects in a two-dimensional coordinate system",
   "version": "1.0.0",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Namir7",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "typescript": "^5.5.4"
   },
-  "dependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Namir7/shapes.git"
+  },
+  "keywords": [
+    "shapes",
+    "geometry",
+    "two-dimentional"
+  ],
+  "bugs": {
+    "url": "https://github.com/Namir7/shapes/issues"
+  },
+  "homepage": "https://github.com/Namir7/shapes#readme"
 }
