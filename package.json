@@ -1,0 +1,16 @@
+{
+  "name": "shapes",
+  "version": "1.0.0",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Namir7",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {}
+}
