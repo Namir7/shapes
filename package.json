@@ -1,6 +1,6 @@
 {
   "name": "geometry-shapes",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "author": "Namir7",
   "description": "simple lib for working with objects in a two-dimensional coordinate system",
   "main": "lib/index.js",

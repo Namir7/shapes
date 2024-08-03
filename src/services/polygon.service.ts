@@ -19,8 +19,8 @@ export class PolygonService implements OperatePolygon {
   center(polygon: Polygon) {
     const boundary = this.boundary(polygon);
 
-    const x = (boundary.coords[1].x - boundary.coords[0].x) / 2;
-    const y = (boundary.coords[1].x - boundary.coords[0].y) / 2;
+    const x = (boundary.coords[1].x + boundary.coords[0].x) / 2;
+    const y = (boundary.coords[1].x + boundary.coords[0].y) / 2;
 
     return new Point({ x, y });
   }
