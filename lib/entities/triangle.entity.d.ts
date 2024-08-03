@@ -1,7 +1,9 @@
-import { PointCoords, ShapeType } from "../types/types";
+import { PointCoords, ShapeType } from "../types";
+type Coords = [PointCoords, PointCoords, PointCoords];
 export declare class Triangle {
     shape: ShapeType;
-    coords: PointCoords[];
-    constructor(coords: PointCoords[]);
+    coords: Coords;
+    constructor(coords: Coords);
     private _validateCoords;
 }
+export {};

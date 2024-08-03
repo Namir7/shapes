@@ -1,16 +1,18 @@
 import { Cricle } from "../entities/cricle.entity";
-import { PointCoords } from "../types/types";
+import { Point } from "../entities/point.entity";
 import { PointService } from "./point.service";
 
 interface OperateCircle {
-  isPointInside(p: PointCoords, c: Cricle): boolean;
+  isPointInside(p: Point, c: Cricle): boolean;
 }
 
 export class CircleService implements OperateCircle {
   private pointService = new PointService();
 
-  isPointInside(point: PointCoords, circle: Cricle) {
-    const distance = this.pointService.distance(point, circle.center);
+  isPointInside(point: Point, circle: Cricle) {
+    const center = new Point(circle.center);
+
+    const distance = this.pointService.distance(point, center);
 
     return circle.radius > distance;
   }

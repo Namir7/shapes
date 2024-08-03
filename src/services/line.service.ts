@@ -1,4 +1,5 @@
 import { Line } from "../entities/line.entity";
+import { Point } from "../entities/point.entity";
 import { PointService } from "./point.service";
 
 interface OperateLine {
@@ -12,8 +13,8 @@ export class LineService implements OperateLine {
     let acc = 0;
 
     for (let i = 0; i < line.coords.length - 1; i++) {
-      const c1 = line.coords[i];
-      const c2 = line.coords[i + 1];
+      const c1 = new Point(line.coords[i]);
+      const c2 = new Point(line.coords[i + 1]);
 
       const distance = this.pointService.distance(c1, c2);
 

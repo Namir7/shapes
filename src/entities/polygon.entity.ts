@@ -1,4 +1,4 @@
-import { PointCoords, ShapeType } from "../types/types";
+import { PointCoords, ShapeType } from "../types";
 
 export class Polygon {
   public shape = ShapeType.Polygon;

@@ -9,7 +9,6 @@
     "outDir": "lib",
     "declaration": true,
     "sourceMap": true
-    // "declarationDir": "lib/types"
   },
   "include": ["src"],
   "exclude": ["node_modules", "lib"]

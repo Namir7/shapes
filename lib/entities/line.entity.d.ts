@@ -1,7 +1,7 @@
-import { PointCoords, ShapeType } from "../types/types";
+import { PointCoords, ShapeType } from "../types";
 export declare class Line {
     shape: ShapeType;
-    coords: PointCoords[];
-    constructor(coords: PointCoords[]);
+    coords: [PointCoords, PointCoords];
+    constructor(coords: [PointCoords, PointCoords]);
     private _validateCoords;
 }

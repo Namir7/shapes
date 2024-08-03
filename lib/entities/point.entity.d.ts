@@ -1,7 +1,7 @@
 import { PointCoords, ShapeType } from "../types";
-export declare class Polygon {
+export declare class Point {
     shape: ShapeType;
-    coords: PointCoords[];
-    constructor(coords: PointCoords[]);
+    coords: PointCoords;
+    constructor(coords: PointCoords);
     private _validateCoords;
 }

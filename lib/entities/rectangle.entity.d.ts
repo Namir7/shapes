@@ -1,11 +1,9 @@
-import { PointCoords, ShapeType } from "../types/types";
-type LeftBottom = PointCoords;
-type RightTop = PointCoords;
-type RectangleCoords = [LeftBottom, RightTop];
+import { PointCoords, ShapeType } from "../types";
+type Coords = [PointCoords, PointCoords];
 export declare class Rectangle {
     shape: ShapeType;
-    coords: RectangleCoords;
-    constructor(coords: RectangleCoords);
+    coords: Coords;
+    constructor(coords: Coords);
     private _validateCoords;
 }
 export {};

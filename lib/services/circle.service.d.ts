@@ -1,10 +1,10 @@
 import { Cricle } from "../entities/cricle.entity";
-import { PointCoords } from "../types/types";
+import { Point } from "../entities/point.entity";
 interface OperateCircle {
-    isPointInside(p: PointCoords, c: Cricle): boolean;
+    isPointInside(p: Point, c: Cricle): boolean;
 }
 export declare class CircleService implements OperateCircle {
     private pointService;
-    isPointInside(point: PointCoords, circle: Cricle): boolean;
+    isPointInside(point: Point, circle: Cricle): boolean;
 }
 export {};

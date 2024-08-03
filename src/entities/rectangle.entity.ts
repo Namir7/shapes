@@ -1,21 +1,22 @@
-import { PointCoords, ShapeType } from "../types/types";
+import { PointCoords, ShapeType } from "../types";
 
-type LeftBottom = PointCoords;
-type RightTop = PointCoords;
-
-type RectangleCoords = [LeftBottom, RightTop];
+/*
+  leftBottom
+  rigthTop
+*/
+type Coords = [PointCoords, PointCoords];
 
 export class Rectangle {
   public shape = ShapeType.Rectangle;
-  public coords: RectangleCoords;
+  public coords: Coords;
 
-  constructor(coords: RectangleCoords) {
+  constructor(coords: Coords) {
     this._validateCoords(coords);
 
     this.coords = coords;
   }
 
-  private _validateCoords(coords: RectangleCoords) {
+  private _validateCoords(coords: Coords) {
     const xValid = coords[0].x < coords[1].x;
     const yValid = coords[0].y < coords[1].y;
 

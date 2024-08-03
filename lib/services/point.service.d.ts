@@ -1,8 +1,8 @@
-import { PointCoords } from "../types/types";
+import { Point } from "../entities/point.entity";
 interface OperatePoint {
-    distance(p1: PointCoords, p2: PointCoords): number;
+    distance(p1: Point, p2: Point): number;
 }
 export declare class PointService implements OperatePoint {
-    distance(p1: PointCoords, p2: PointCoords): number;
+    distance(p1: Point, p2: Point): number;
 }
 export {};

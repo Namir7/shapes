@@ -1,14 +1,14 @@
-import { Polygon } from '../entities/polygon.entity';
-import { Rectangle } from '../entities/rectangle.entity';
-import { Triangle } from '../entities/triangle.entity';
-import { PointCoords } from '../types/types';
-import { TriangleService } from './triangle.service';
+import { Point } from "../entities/point.entity";
+import { Polygon } from "../entities/polygon.entity";
+import { Rectangle } from "../entities/rectangle.entity";
+import { Triangle } from "../entities/triangle.entity";
+import { PointCoords } from "../types";
+import { TriangleService } from "./triangle.service";
 
 interface OperatePolygon {
-  center(p: Polygon): PointCoords;
+  center(p: Polygon): Point;
   boundary(p: Polygon): Rectangle;
-  //   convex(pol: ShapePolygon): ShapePolygonConvex;
-  isPointInside(p: PointCoords, pol: Polygon): boolean;
+  isPointInside(p: Point, pol: Polygon): boolean;
   isInclude(inner: Polygon, outer: Polygon): boolean;
   isIntersection(pol1: Polygon, pol2: Polygon): boolean;
 }
@@ -22,7 +22,7 @@ export class PolygonService implements OperatePolygon {
     const x = (boundary.coords[0].x - boundary.coords[1].x) / 2;
     const y = (boundary.coords[0].y - boundary.coords[1].x) / 2;
 
-    return { x, y };
+    return new Point({ x, y });
   }
 
   boundary(ploygon: Polygon) {
@@ -51,20 +51,20 @@ export class PolygonService implements OperatePolygon {
       [
         { x: -Infinity, y: -Infinity },
         { x: Infinity, y: Infinity },
-      ],
+      ]
     );
 
     return new Rectangle([p1, p2]);
   }
 
-  isPointInside(point: PointCoords, polygon: Polygon) {
+  isPointInside(point: Point, polygon: Polygon) {
     const center = this.center(polygon);
 
     for (let i = 0; i < polygon.coords.length - 1; i++) {
       const triangle = new Triangle([
         polygon.coords[i],
         polygon.coords[i + 1],
-        center,
+        center.coords,
       ]);
 
       const isInside = this.triangleService.isPointInside(point, triangle);
@@ -78,8 +78,8 @@ export class PolygonService implements OperatePolygon {
   }
 
   isInclude(inner: Polygon, outer: Polygon) {
-    for (const point of inner.coords) {
-      const isInside = this.isPointInside(point, outer);
+    for (const coords of inner.coords) {
+      const isInside = this.isPointInside(new Point(coords), outer);
 
       if (!isInside) {
         return false;
@@ -90,8 +90,8 @@ export class PolygonService implements OperatePolygon {
   }
 
   isIntersection(poligon1: Polygon, polygon2: Polygon) {
-    for (const point of poligon1.coords) {
-      const isPointInside = this.isPointInside(point, polygon2);
+    for (const coords of poligon1.coords) {
+      const isPointInside = this.isPointInside(new Point(coords), polygon2);
 
       if (isPointInside) {
         return true;

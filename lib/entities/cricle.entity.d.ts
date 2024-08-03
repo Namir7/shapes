@@ -1,4 +1,4 @@
-import { PointCoords, ShapeType } from "../types/types";
+import { PointCoords, ShapeType } from "../types";
 export declare class Cricle {
     shape: ShapeType;
     center: PointCoords;
